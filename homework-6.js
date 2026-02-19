@@ -121,21 +121,10 @@ const lordOfRingsBook = [
 const allBooks = [...books, ...newBook, ...lordOfRingsBook];
 
 //10. Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).
-function markRareBooks(booksArray) {
-  return booksArray.map(book => {
-    let rareStatus;
+const markRareBooks = (booksArray) =>
+  booksArray.map(book => ({
+    ...book,
+    isRare: book.year >= 2000
+  }));
 
-    if (book.year > 2000) {
-      rareStatus = false;
-    } else if (book.year < 2000) {
-      rareStatus = true;
-    }
-
-    return {
-      ...book,
-      isRare: rareStatus
-    };
-  });
-}
-
-console.log(markRareBooks(allBooks))
+console.table(markRareBooks(allBooks));
