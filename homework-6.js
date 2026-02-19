@@ -124,7 +124,7 @@ const allBooks = [...books, ...newBook, ...lordOfRingsBook];
 const markRareBooks = (booksArray) =>
   booksArray.map(book => ({
     ...book,
-    isRare: book.year >= 2000
+    isRare: book.year < 2000
   }));
 
 console.table(markRareBooks(allBooks));
