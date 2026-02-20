@@ -18,39 +18,30 @@ const carInfo = {
   model: 'Camry',
   year: 2024,
   color: 'black',
-  transmission: 'автомат',
-  owner: {
-    name: 'Ilya',
-    surname: 'Grigorov',
-    email: 'ilya@gmail.com',
-    job: 'joblessly',
-    role: 'no role',
-    age: 19,
-    country: 'Kazakhstan',
-    city: 'Karaganda'
-  }
+  transmission: 'автомат'
 }
+
+carInfo.carOwner = userInfo;
 
 //5. Написать функцию которая аргументом будет принимать объект, описанный в пункте №4. Она проверяет, есть ли в объекте свойство "максимальная скорость", если нет - добавляет его и задает значение, если есть - прекращает выполнение (ничего не делает)
-function addPropertyIfMissing(obj, key) {
-  if (carInfo.maxSpeed !== undefined) {
-    console.log(`Свойство ${key} уже есть.`);
+const addPropertyIfMissing = (obj) => {
+  if (carInfo.maxSpeed === undefined) {
+    carInfo.maxSpeed = 400;
+  } else {
     return
   }
-
-  obj.maxSpeed = 400;
-  console.log(`Свойство "${key}" добавлено.`)
 }
 
-addPropertyIfMissing(carInfo, 'maxSpeed')
+addPropertyIfMissing(carInfo)
+console.log(carInfo)
 
 
 //6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, которое нужно вывести и выводит его значение.
-function displayValue(obj, key) {
+function displayValueObjectProperty(obj, key) {
   console.log(obj[key])
 }
 
-displayValue(carInfo, 'year')
+displayValueObjectProperty(carInfo, 'year')
 
 //7. Создать массив, который содержит названия продуктов (просто строки)
 const products = ['apple', 'pear', 'orange', 'banana', 'limon']
@@ -118,7 +109,7 @@ const lordOfRingsBook = [
   }
 ];
 
-const allBooks = [...books, ...newBook, ...lordOfRingsBook];
+const allBooks = [...books, ...lordOfRingsBook];
 
 //10. Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).
 const markRareBooks = (booksArray) =>
@@ -127,4 +118,4 @@ const markRareBooks = (booksArray) =>
     isRare: book.year < 2000
   }));
 
-console.table(markRareBooks(allBooks));
+markRareBooks(allBooks);
