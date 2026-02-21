@@ -32,19 +32,19 @@ const addPropertyIfMissing = (obj) => {
   }
 }
 
-addPropertyIfMissing(carInfo)
-console.log(carInfo)
+addPropertyIfMissing(carInfo);
+console.log(carInfo);
 
 
 //6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, которое нужно вывести и выводит его значение.
 function displayValueObjectProperty(obj, key) {
-  console.log(obj[key])
+  console.log(obj[key]);
 }
 
-displayValueObjectProperty(carInfo, 'year')
+displayValueObjectProperty(carInfo, 'year');
 
 //7. Создать массив, который содержит названия продуктов (просто строки)
-const products = ['apple', 'pear', 'orange', 'banana', 'limon']
+const products = ['apple', 'pear', 'orange', 'banana', 'limon'];
 
 //8. Создать массив, состоящий из объектов, где объект представляет собой книгу (название, автор, год выпуска, цвет обложки, жанр) (3-5 книг). После, используя известный нам метод массив, добавить еще одну книгу в конец списка. Можете заменить книги на фильмы, или другую сущность, идею вы поняли.
 const books = [
@@ -81,7 +81,7 @@ const newBook = [
   }
 ];
 
-books.push(newBook)
+books.push(newBook);
 
 
 //9. Создать еще один массив, состоящих из тех же книг, но относящийся к определенной вселенной (Гарри Поттер, Марвел и так далее). (Если используете другую, свою сущность - импровизируйте). С помощью известного нам метода массива или оператора (рекомендую использовать оператор), объединить эти два массива в один
