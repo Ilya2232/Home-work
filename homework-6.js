@@ -24,7 +24,7 @@ const carInfo = {
 carInfo.carOwner = userInfo;
 
 //5. Написать функцию которая аргументом будет принимать объект, описанный в пункте №4. Она проверяет, есть ли в объекте свойство "максимальная скорость", если нет - добавляет его и задает значение, если есть - прекращает выполнение (ничего не делает)
-const addProperty = (obj) => {
+const addMaxSpeedProperty = (obj) => {
   if (!carInfo.maxSpeed) {
     carInfo.maxSpeed = 400;
   } else {
@@ -32,16 +32,16 @@ const addProperty = (obj) => {
   }
 }
 
-addProperty(carInfo);
+addMaxSpeedProperty(carInfo);
 console.log(carInfo);
 
 
 //6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, которое нужно вывести и выводит его значение.
-function displayValue(obj, key) {
+function displayObjectValue(obj, key) {
   console.log(obj[key]);
 }
 
-displayValue(carInfo, 'year');
+displayObjectValue(carInfo, 'year');
 
 //7. Создать массив, который содержит названия продуктов (просто строки)
 const products = ['apple', 'pear', 'orange', 'banana', 'limon'];
