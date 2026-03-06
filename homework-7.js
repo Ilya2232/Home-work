@@ -1,3 +1,4 @@
+import { comments } from "./comments.js";
 //Домашнее задание №7:
 //Уровень 1:
 
@@ -12,16 +13,15 @@ const hasApple = fruits.includes('apple');
 //4. Написать функцию, которая аргументом будет принимать массив и изменять его порядок на противоположный ("переворачивать") . Два вышеуказанных массива с помощью этой функции перевернуть.
 function reverseArray(array) {
   array.reverse();
-  return array;
 }
 
-console.log(reverseArray(numbers));
-console.log(reverseArray(fruits));
+reverseArray(numbers);
+console.log(numbers);
+reverseArray(fruits);
+console.log(fruits);
 
 //Уровень 2:
 //7. Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com"
-import { comments } from "./comments.js";
-
 const comComments = comments.filter(comment => {
   return comment.email.includes('.com');
 });
@@ -39,10 +39,11 @@ const idAndNameComments = comments.map(comment => ({
 }));
 
 //10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
-const isInvalidComments = comments.map(comment => ({
+const addProperty = comments.map(comment => ({
   ...comment,
-  isInvalid: comment.body.length > 180 ? true : false
+  isInvalid: comment.body.leng > 180
 }));
+console.log(addProperty)
 
 //Уровень 3:
 //11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
