@@ -29,7 +29,7 @@ function renderProductCards(dataArray) {
   dataArray.forEach(product => {
     const productClone = prodcutTemplate.content.cloneNode(true);
     productClone.querySelector('.product-card__img').src = product.image;
-    productClone.querySelector('.product-card__for-skin').textContent = product.forSkin;
+    productClone.querySelector('.product-card__for-skin').textContent = product.skinType;
     productClone.querySelector('.product-card__title').textContent = product.title;
     productClone.querySelector('.product-card__description').textContent = product.description;
     productClone.querySelector('.price').innerHTML = ` ${product.price} &#8381;`;
