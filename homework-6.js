@@ -118,4 +118,4 @@ const markRareBooks = (booksArray) =>
     isRare: book.year < 2000
   }));
 
-markRareBooks(allBooks);
+console.log(markRareBooks(allBooks))

@@ -39,11 +39,11 @@ const idAndNameComments = comments.map(comment => ({
 }));
 
 //10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
-const addProperty = comments.map(comment => ({
+const validatedCommetns = comments.map(comment => ({
   ...comment,
   isInvalid: comment.body.leng > 180
 }));
-console.log(addProperty)
+console.log(validatedCommetns)
 
 //Уровень 3:
 //11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
