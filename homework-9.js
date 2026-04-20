@@ -46,12 +46,13 @@ registerForm.addEventListener('submit', (event) => {
     const objectEntries = Object.fromEntries(registerFormData.entries());
     objectEntries.createdOn = new Date();
     user = objectEntries;
+
+    modal.classList.remove('modal-showed');
+    overlay.classList.remove('overlay-showed');
+    registerForm.reset();
   }
-  console.log(user)
+  console.log(user);
 });
 
-completeRgBtn.addEventListener('submit', () => {
-  modal.classList.remove('modal-showed');
-  overlay.classList.remove('overlay-showed');
-})
+
 
