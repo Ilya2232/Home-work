@@ -50,7 +50,7 @@ registerForm.addEventListener('submit', (event) => {
   console.log(user)
 });
 
-completeRgBtn.addEventListener('click', () => {
+completeRgBtn.addEventListener('submit', () => {
   modal.classList.remove('modal-showed');
   overlay.classList.remove('overlay-showed');
 })
